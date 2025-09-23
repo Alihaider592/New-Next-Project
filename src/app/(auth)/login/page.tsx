@@ -38,7 +38,7 @@ export default function login() {
             href="/signup"
             className="font-semibold text-blue-600 hover:underline"
           >
-            SignUp
+            Sign Up
           </Link>
         </p>
         </form>
