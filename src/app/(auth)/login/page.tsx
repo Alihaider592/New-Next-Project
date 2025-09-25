@@ -36,6 +36,7 @@ export default function Signup() {
           </button>
         </form>
 
+          <SignInButton/>
         <p className="mt-6 text-center text-gray-600">
           Dont have any account?{" "}
           <Link
@@ -44,7 +45,6 @@ export default function Signup() {
           >
             Sign Up
           </Link>
-          <SignInButton/>
         </p>
       </div>
     </div>
