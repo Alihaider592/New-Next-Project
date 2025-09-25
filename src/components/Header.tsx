@@ -9,6 +9,9 @@ const Header = () => {
         <ul className='flex gap-8 font-bold text-lg'>
         <Link href="/">Home</Link>
         <Link href="/posts">posts</Link>
+        <Link href="/userinfo">user info</Link>
+        <Link href="/login">Login</Link>
+        <Link href="/signup">SignUp</Link>
         </ul>
       </div>
       <div>

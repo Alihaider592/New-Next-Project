@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import { SignInButton } from "@/app/components/sign-in-button";
 export default function Signup() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100">
@@ -44,6 +44,7 @@ export default function Signup() {
           >
             Sign Up
           </Link>
+          <SignInButton/>
         </p>
       </div>
     </div>
