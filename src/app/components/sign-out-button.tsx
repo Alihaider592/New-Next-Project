@@ -1,17 +1,18 @@
-"use client"
-import { logOut } from "../lib/actions/auth";
-export const SignOutButton  = ()=>{
+"use client";
 
-return( <div>   <button onClick={()=>logOut()} className="bg-gray-600 
-         bg-purple 
-        text-white 
-        font-semibold 
-        py-2 px-6 
-        rounded-lg 
-        shadow-md
-        hover:bg-purple-700
-        transition 
-        duration-200">Sign Out</button>   
-</div>
-)
+import { signOut } from "next-auth/react";
+
+interface SignOutButtonProps {
+  className?: string;
+}
+
+export function SignOutButton({ className }: SignOutButtonProps) {
+  return (
+    <button
+      onClick={() => signOut()}
+      className={`bg-red-500 text-white font-semibold py-3 px-6 rounded-xl hover:bg-red-600 shadow-md transition-all duration-300 ${className || ""}`}
+    >
+      Sign Out
+    </button>
+  );
 }

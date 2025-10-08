@@ -34,18 +34,20 @@
 //     </div>
 //   );
 // }
+// "use client";
+
 import Image from "next/image";
 import { getServerSession } from "next-auth/next"; 
-import { auth } from "@/app/auth"; // your NextAuth config
+import { auth } from "@/app/auth"; 
 import { SignOutButton } from "../components/sign-out-button";
 
 export default async function UserInfoPage() {
-  const session = await getServerSession(auth); 
+  const session = await getServerSession(auth);
 
   if (!session?.user) {
     return (
       <div className="min-h-screen bg-blue-50 flex items-center justify-center">
-        <div className="bg-white p-8 rounded-xl shadow-md text-center">
+        <div className="bg-white p-8 rounded-2xl shadow-lg text-center">
           <h1 className="text-3xl font-bold mb-4 text-gray-800">
             NextAuth v5 vs Next.js 15
           </h1>
@@ -57,8 +59,8 @@ export default async function UserInfoPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-200 to-pink-100 flex items-center justify-center p-6">
-      <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md text-center">
-        <h1 className="text-3xl font-bold mb-6 text-gray-900">
+      <div className="bg-white p-8 rounded-3xl shadow-xl w-full max-w-md text-center">
+        <h1 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
           Welcome, {session.user.name}!
         </h1>
 
@@ -69,7 +71,7 @@ export default async function UserInfoPage() {
               width={120}
               height={120}
               alt="User Avatar"
-              className="rounded-full border-4 border-purple-300"
+              className="rounded-full border-4 border-purple-300 shadow-md"
             />
           </div>
         )}
@@ -81,7 +83,7 @@ export default async function UserInfoPage() {
           <span className="font-semibold">Email:</span> {session.user.email}
         </p>
 
-        <SignOutButton/>
+        <SignOutButton className="w-full bg-purple-500 hover:bg-purple-600 text-white shadow-lg hover:shadow-xl transition-all duration-300" />
       </div>
     </div>
   );
